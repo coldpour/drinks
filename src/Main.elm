@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput, onClick)
 import Result as Result
+import Shot exposing (shot)
 
 
 main : Program Never Model Msg
@@ -146,11 +147,14 @@ buttonPreset { name, value } =
 drinksView : Float -> Html Msg
 drinksView drinks =
     div [ class "drinks" ]
-        [ text
-            (String.append
-                "drinks: "
-                (toString drinks)
-            )
+        [ div []
+            [ text
+                (String.append
+                    "drinks: "
+                    (toString drinks)
+                )
+            ]
+        , shot drinks
         ]
 
 
